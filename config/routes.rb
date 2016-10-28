@@ -4,9 +4,8 @@ Rails.application.routes.draw do
   get 'login' => 'sessions#new'
   post 'login' => 'sessions#create'
   delete 'logout' => 'sessions#destroy'
+    root 'welcome#index'
 
-
-  get '/', to: 'welcome#index'
   post '/update_geolocation', to: 'geocoding#update'
   # get '/selection', to: 'welcome#select'
   # get '/print', to: 'welcome#print'

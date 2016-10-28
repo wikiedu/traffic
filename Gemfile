@@ -32,7 +32,7 @@ gem 'glyphicons-rails'
 # gem 'therubyracer'
 # gem 'less-rails-bootstrap'
 # gem "twitter-bootstrap-rails"
-
+ruby "2.3.0"
 
 # Users
 gem 'bcrypt'
