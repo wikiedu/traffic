@@ -24,7 +24,7 @@ gem 'less-rails-bootstrap'
 
 gem 'glyphicons-rails'
 # gemas para heroku assets
-gem 'rails_12factor', group: :production
+gem 'railties', '~> 5.0', '>= 5.0.0.1'
 
 # gem 'bootstrap-sass', '~> 3.3.7'
 # gem 'jquery-ui-bootstrap-rails'
