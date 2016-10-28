@@ -23,6 +23,7 @@ gem 'therubyracer'
 gem 'less-rails-bootstrap'
 
 gem 'glyphicons-rails'
+# gemas para heroku assets
 
 # gem 'bootstrap-sass', '~> 3.3.7'
 # gem 'jquery-ui-bootstrap-rails'
