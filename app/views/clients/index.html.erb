@@ -1,0 +1,23 @@
+
+    <header>
+      <h1 id="model-name">List of clients:</h1>
+    </header>
+<div>
+  <% if @clients %>
+    <% @clients.each do |client| %>
+      <ul>
+        <h3><%= link_to client.name, client_locations_path(client.id), method: :get%></h3>
+        <% if current_user.admin? %>
+          | <%= link_to 'Edit', edit_client_path(client.id), method: :get %> | <%= link_to 'X', client_path(client.id), method: :delete,data: {confirm: "Are you sure?"}%>
+        <% end %>
+      </ul>
+    <% end %>
+  <% end %>
+</div>
+<% if current_user.admin? %>
+<h4><%= link_to 'Add new Client', new_client_path, method: :get, class: 'btn btn-primary btn-sm'%></h4>
+
+<% end %>
+<% if current_user.admin? %>
+
+<% end %>

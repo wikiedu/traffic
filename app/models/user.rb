@@ -1,6 +1,7 @@
 class User < ApplicationRecord
   validates :username, presence: true
   validates :email, presence: true, uniqueness: true
+  belongs_to :company, optional: true
 
   has_secure_password
 
@@ -13,6 +14,24 @@ class User < ApplicationRecord
 
   def default_values
     self.role ||= ROLE_CLIENT
+  end
+
+  def clients
+    if company
+      company.clients
+    end
+  end
+
+  def admin?
+    role == ROLE_ADMIN
+  end
+
+  def transporter?
+    role == ROLE_TRANSPORTER
+  end
+
+  def client?
+    role == ROLE_CLIENT
   end
 
 end

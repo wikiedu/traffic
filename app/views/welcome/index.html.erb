@@ -19,10 +19,11 @@
                     <li><a class="page-scroll" href="#pricing">Pricing</a></li>
                     <li><a class="page-scroll" href="#contact">Contact</a></li>
                     <% if current_user %>
-                      <%= link_to(current_user.email,  '/', method: :get, class: "fa fa-user") %> <br>
+                      <%= link_to(current_user.email,  clients_path, method: :get, class: "fa fa-user") %> <br>
                       <%= link_to('Log-Out',  'logout', method: :delete, class: "fa fa-sign-out") %>
                     <% else %>
-                      <%= link_to('Log-In',  'login', method: :get, class: "fa fa-sign-in") %>
+                      <%= link_to('Sign-Up',  new_user_path, method: :get, class: "fa fa-user-plus") %><br>
+                          <%= link_to('Log-In',  'login', method: :get, class: "fa fa-sign-in") %>
                     <% end %>
                 </ul>
             </div>
