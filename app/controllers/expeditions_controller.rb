@@ -1,3 +1,5 @@
+require 'csv'
+
 class ExpeditionsController < ApplicationController
 
     before_action :load_client
@@ -58,6 +60,7 @@ class ExpeditionsController < ApplicationController
     end
 
     def import
+
       CSV.foreach(params[:file].path, col_sep:  ";", headers: true) do |row|
         origin_location = row[0]
         destination_location = row[1]

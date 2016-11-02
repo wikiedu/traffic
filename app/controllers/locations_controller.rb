@@ -1,3 +1,4 @@
+require 'csv'
 class LocationsController < ApplicationController
 
     before_action :load_client
