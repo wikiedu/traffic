@@ -16,6 +16,13 @@ gem 'coffee-rails', '~> 4.2'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
+# Gemas traçabilitat
+gem 'gmaps4rails', '~> 2.1', '>= 2.1.2'
+gem 'bullet', '~> 5.4'
+gem 'roo', '~> 2.4.0'
+gem 'rqrcode'
+gem 'rqrcode_png'
+
 # Gemas Template i estils
 gem 'bootstrap-sass', '~> 3.3.6'
 gem "font-awesome-rails"
