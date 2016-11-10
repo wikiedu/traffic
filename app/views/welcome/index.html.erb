@@ -1,6 +1,7 @@
 <div class="navbar-wrapper">
     <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
         <div class="container">
+          <div class="row">
             <div class="navbar-header page-scroll">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
                     <span class="sr-only">Toggle navigation</span>
@@ -19,19 +20,27 @@
                     <li><a class="page-scroll" href="#pricing">Pricing</a></li>
                     <li><a class="page-scroll" href="#contact">Contact</a></li>
                     <% if current_user %>
-                      <%= link_to(current_user.email,  clients_path, method: :get, class: "fa fa-user") %> <br>
-                      <%= link_to('Log-Out',  'logout', method: :delete, class: "fa fa-sign-out") %>
+                      <li> <%= link_to(clients_path, method: :get) do %>
+                        <i class="fa fa-user" aria-hidden="true"></i> <%= current_user.email %>
+                      <% end %> </li>
+                      <li> <%= link_to('logout', method: :delete) do %>
+                        <i class="fa fa-sign-out" aria-hidden="true"></i> <%= 'Log-Out' %>
+                      <% end %> </li>
                     <% else %>
-                      <%= link_to('Sign-Up',  new_user_path, method: :get, class: "fa fa-user-plus") %><br>
-                          <%= link_to('Log-In',  'login', method: :get, class: "fa fa-sign-in") %>
+                    <li>  <%= link_to(new_user_path, method: :get) do %>
+                        <i class="fa fa-user-plus" aria-hidden="true"></i> <%= Sign-Up %>
+                      <% end %> </li>
+                    <li>  <%= link_to('login', method: :get, class: "fa fa-sign-in") do %>
+                        <i class="fa fa-sign-in" aria-hidden="true"></i> <%= Log-In %>
+                      <% end %></li>
                     <% end %>
                 </ul>
             </div>
+          </div>
         </div>
     </nav>
   </div>
 
-</div>
 <div id="inSlider" class="carousel carousel-fade" data-ride="carousel">
 <ol class="carousel-indicators">
     <li data-target="#inSlider" data-slide-to="0" class="active"></li>

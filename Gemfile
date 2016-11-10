@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-
+ruby "2.3.0"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
@@ -26,22 +26,9 @@ gem 'rqrcode_png'
 # Gemas Template i estils
 gem 'bootstrap-sass', '~> 3.3.6'
 gem "font-awesome-rails"
-gem 'therubyracer'
-gem 'less-rails-bootstrap'
 
-gem 'glyphicons-rails'
 # gemas para heroku assets
 gem 'railties', '~> 5.0', '>= 5.0.0.1'
-
-# gem 'bootstrap-sass', '~> 3.3.7'
-# gem 'jquery-ui-bootstrap-rails'
-# gem 'jquery-ui-rails'
-# gem "font-awesome-rails"
-# gem 'bootstrap'
-# gem 'therubyracer'
-# gem 'less-rails-bootstrap'
-# gem "twitter-bootstrap-rails"
-ruby "2.3.0"
 
 # Users
 gem 'bcrypt'

@@ -1,4 +1,6 @@
 class GeocodingController < ApplicationController
+  skip_before_action :verify_authenticity_token
+
   def update
     coordinates = "#{params[:lat]},#{params[:long]}"
     expeditions=Expedition.where(date: Date.today)
