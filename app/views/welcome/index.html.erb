@@ -15,9 +15,15 @@
                 <ul class="nav navbar-nav navbar-right">
                     <li><a class="page-scroll" href="#page-top">Home</a></li>
                     <li><a class="page-scroll" href="#features">Features</a></li>
-                    <li><a class="page-scroll" href="#team">Team</a></li>
-                    <li><a class="page-scroll" href="#testimonials">Testimonials</a></li>
-                    <li><a class="page-scroll" href="#pricing">Pricing</a></li>
+                    <li class="dropdown">
+                      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">More</a>
+                      <ul class="dropdown-menu">
+                        <li><a class="page-scroll" href="#team">Team</a></li>
+                        <li><a class="page-scroll" href="#testimonials">Testimonials</a></li>
+                        <li><a class="page-scroll" href="#pricing">Pricing</a></li>
+                      </ul>
+                    </li>
+
                     <li><a class="page-scroll" href="#contact">Contact</a></li>
                     <% if current_user %>
                       <li> <%= link_to(clients_path, method: :get) do %>
@@ -28,10 +34,10 @@
                       <% end %> </li>
                     <% else %>
                     <li>  <%= link_to(new_user_path, method: :get) do %>
-                        <i class="fa fa-user-plus" aria-hidden="true"></i> <%= Sign-Up %>
+                        <i class="fa fa-user-plus" aria-hidden="true"></i> <%= 'Sign-Up' %>
                       <% end %> </li>
-                    <li>  <%= link_to('login', method: :get, class: "fa fa-sign-in") do %>
-                        <i class="fa fa-sign-in" aria-hidden="true"></i> <%= Log-In %>
+                    <li>  <%= link_to('login', method: :get) do %>
+                        <i class="fa fa-sign-in" aria-hidden="true"></i> <%= 'Log-In' %>
                       <% end %></li>
                     <% end %>
                 </ul>
@@ -50,19 +56,19 @@
     <div class="item active">
         <div class="container">
             <div class="carousel-caption">
-                <h1>We craft<br/>
-                    brands, web apps,<br/>
-                    and user interfaces<br/>
-                    we are IN+ studio</h1>
-                <p>Lorem Ipsum is simply dummy text of the printing.</p>
+                <h1>Control, track<br/>
+                    and manage transport.<br/>
+                    Easy and powerfull.
+                    </h1>
+                <p></p>
                 <p>
-                    <a class="btn btn-lg btn-primary" href="#" role="button">READ MORE</a>
-                    <a class="caption-link" href="#" role="button">Inspinia Theme</a>
+                    <a class="btn btn-lg btn-primary" href="#features" role="button">READ MORE</a>
+                    <a class="caption-link" href="#" role="button">Try It !</a>
                 </p>
             </div>
-            <div class="carousel-image wow zoomIn">
+            <!-- <div class="carousel-image wow zoomIn">
                 <img src="<%= image_path('landing/laptop.png') %>" alt="laptop"/>
-            </div>
+            </div> -->
         </div>
         <!-- Set background for slide in css -->
         <div class="header-back one"></div>
@@ -91,7 +97,7 @@
 </div>
 
 
-<section id="features" class="container services">
+<!-- <section id="features" class="container services">
 <div class="row">
     <div class="col-sm-3">
         <h2>Full responsive</h2>
@@ -114,9 +120,9 @@
         <p><a class="navy-link" href="#" role="button">Details &raquo;</a></p>
     </div>
 </div>
-</section>
+</section> -->
 
-<section  class="container features">
+<section  id="features" class="container features">
 <div class="row">
     <div class="col-lg-12 text-center">
         <div class="navy-line"></div>
@@ -153,7 +159,7 @@
         </div>
     </div>
 </div>
-<div class="row">
+<!-- <div class="row">
     <div class="col-lg-12 text-center">
         <div class="navy-line"></div>
         <h1>Discover great feautres</h1>
@@ -171,7 +177,7 @@
         <img src="<%= image_path('landing/dashboard.png') %>" alt="dashboard" class="img-responsive pull-right">
     </div>
 </div>
-</section>
+</section> -->
 
 <section id="team" class="gray-section team">
 <div class="container">
@@ -179,13 +185,12 @@
         <div class="col-lg-12 text-center">
             <div class="navy-line"></div>
             <h1>Our Team</h1>
-            <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod.</p>
         </div>
     </div>
     <div class="row">
-        <div class="col-sm-4 wow fadeInLeft">
+        <div class="col-sm-3">
             <div class="team-member">
-                <img src="<%= image_path('landing/avatar3.jpg') %>" class="img-responsive img-circle img-small" alt="">
+                <img src="<%= image_path('landing/01.jpg') %>" class="img-responsive img-circle" alt="">
                 <h4><span class="navy">Amelia</span> Smith</h4>
                 <p>Lorem ipsum dolor sit amet, illum fastidii dissentias quo ne. Sea ne sint animal iisque, nam an soluta sensibus. </p>
                 <ul class="list-inline social-icon">
@@ -198,9 +203,9 @@
                 </ul>
             </div>
         </div>
-        <div class="col-sm-4">
-            <div class="team-member wow zoomIn">
-                <img src="<%= image_path('landing/avatar1.jpg') %>" class="img-responsive img-circle" alt="">
+        <div class="col-sm-3">
+            <div class="team-member">
+                <img src="<%= image_path('landing/02.jpg') %>" class="img-responsive img-circle" alt="">
                 <h4><span class="navy">John</span> Novak</h4>
                 <p>Lorem ipsum dolor sit amet, illum fastidii dissentias quo ne. Sea ne sint animal iisque, nam an soluta sensibus.</p>
                 <ul class="list-inline social-icon">
@@ -213,9 +218,25 @@
                 </ul>
             </div>
         </div>
-        <div class="col-sm-4 wow fadeInRight">
+        <div class="col-sm-3">
             <div class="team-member">
-                <img src="<%= image_path('landing/avatar2.jpg') %>" class="img-responsive img-circle img-small" alt="">
+                <img src="<%= image_path('landing/03.jpg') %>" class="img-responsive img-circle" alt="">
+                <h4><span class="navy">Peter</span> Johnson</h4>
+                <p>Lorem ipsum dolor sit amet, illum fastidii dissentias quo ne. Sea ne sint animal iisque, nam an soluta sensibus.</p>
+                <ul class="list-inline social-icon">
+                    <li><a href="#"><i class="fa fa-twitter"></i></a>
+                    </li>
+                    <li><a href="#"><i class="fa fa-facebook"></i></a>
+                    </li>
+                    <li><a href="#"><i class="fa fa-linkedin"></i></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="col-sm-3">
+            <div class="team-member">
+                <img src="<%= image_path('landing/04.jpg') %>" class="img-responsive img-circle" alt="">
                 <h4><span class="navy">Peter</span> Johnson</h4>
                 <p>Lorem ipsum dolor sit amet, illum fastidii dissentias quo ne. Sea ne sint animal iisque, nam an soluta sensibus.</p>
                 <ul class="list-inline social-icon">
@@ -236,7 +257,7 @@
     </div>
 </div>
 </section>
-
+<!--
 <section class="features">
 <div class="container">
     <div class="row">
@@ -326,7 +347,7 @@
     </div>
 </div>
 
-</section>
+</section> -->
 
 <section id="testimonials" class="navy-section testimonials" style="margin-top: 0">
 
@@ -417,7 +438,7 @@
 
 </section>
 
-<section class="features">
+<!-- <section class="features">
 <div class="container">
     <div class="row">
         <div class="col-lg-12 text-center">
@@ -454,7 +475,7 @@
             <p>INSPINIA Admin Theme is a premium admin dashboard template with flat design concept. It is fully responsive admin dashboard template built with Bootstrap 3+ Framework, HTML5 and CSS3, Media query. It has a huge collection of reusable UI components and integrated with.</p>
         </div>
     </div>
-</div>
+</div> -->
 
 </section>
 <section id="pricing" class="pricing">
@@ -470,13 +491,13 @@
         <div class="col-lg-4 wow zoomIn">
             <ul class="pricing-plan list-unstyled">
                 <li class="pricing-title">
-                    Basic
+                    (A) Optimization
                 </li>
                 <li class="pricing-desc">
                     Lorem ipsum dolor sit amet, illum fastidii dissentias quo ne. Sea ne sint animal iisque, nam an soluta sensibus.
                 </li>
                 <li class="pricing-price">
-                    <span>$16</span> / month
+                    <span>$9,99</span> user / month
                 </li>
                 <li>
                     Dashboards
@@ -502,13 +523,13 @@
         <div class="col-lg-4 wow zoomIn">
             <ul class="pricing-plan list-unstyled selected">
                 <li class="pricing-title">
-                    Standard
+                    All
                 </li>
                 <li class="pricing-desc">
                     Lorem ipsum dolor sit amet, illum fastidii dissentias quo ne. Sea ne sint animal iisque, nam an soluta sensibus.
                 </li>
                 <li class="pricing-price">
-                    <span>$22</span> / month
+                    <span>$45</span> car / month
                 </li>
                 <li>
                     Dashboards
@@ -537,13 +558,13 @@
         <div class="col-lg-4 wow zoomIn">
             <ul class="pricing-plan list-unstyled">
                 <li class="pricing-title">
-                    Premium
+                    (A) + Tracking
                 </li>
                 <li class="pricing-desc">
                     Lorem ipsum dolor sit amet, illum fastidii dissentias quo ne. Sea ne sint animal iisque, nam an soluta sensibus.
                 </li>
                 <li class="pricing-price">
-                    <span>$160</span> / month
+                    <span>$14,99</span> car / month
                 </li>
                 <li>
                     Dashboards
